@@ -41,8 +41,8 @@ class GUI_INIT:
 		
 		self.master = tk.Tk()
 		for var in range (0,17):
-			Marker_cordinates= "Marker_cordinates_" + str((var/2+1))
-			tk.Label(self.master, text="Number_of_marker").grid(row=0)
+			Marker_cordinates= "Marker_Cordinates_" + str((var/2+1))
+			tk.Label(self.master, text="Number_of_Markers").grid(row=0)
 			if (var%2 != 0):
 				tk.Label(self.master, text=Marker_cordinates).grid(row=var)
 			if (var<16):
@@ -79,7 +79,7 @@ class GUI_INIT:
 		print self.entered_data
 		self.eb ={n:"Sandy",n+1: "Clay",n+2: "Slity",n+3:"Rain Water",n+4: "Ice",n+5: "Snow Water",n+6:"Sedimentry",n+7: "Metamorphic",n+8: "Igneous",n+9:"Oxides",n+10: "Carbonates",n+11: "Phosphates",n+12:"Sulfides",n+13: "Native Element",n+14: "Silicates"}
 		self.SOI_list_enter ={self.entered_data[2]:[self.entered_data[1]],self.entered_data[4]:[self.entered_data[3]],self.entered_data[6]:[self.entered_data[5]],self.entered_data[8]:[self.entered_data[7]],self.entered_data[10]:[self.entered_data[9]],self.entered_data[12]:[self.entered_data[11]],self.entered_data[14]:[self.entered_data[13]],self.entered_data[16]:[self.entered_data[15]] }
-		print self.SOI_list_enter
+		# print self.SOI_list_enter
 		self.gui_function()			
 
 	def Callback(self,data):
@@ -97,7 +97,7 @@ class GUI_INIT:
 			
 			#self.panel =tk.Label (self.top, image = self.img)
 			#self.panel.pack(side = "bottom" ,fill ="both",expand = "yes")
-			self.load_img = {n: "sand.jpeg", n+1:"silty.jpg",n+2:"clay.jpg",n+3:"rainwater.jpg",n+4:"ice.jpg",n+5:"snowwater.jpg",n+6:"sedimetary.JPG",n+7:"metamorphic.jpg",n+8:"Igneous.jpeg", n+9:"oxides.jpg", n+10:"carbonates.jpg", n+11:"phosphates.jpg",n+12:"sulfides.jpg",n+13:"native_element.jpg",n+14: "silicates.jpg",n+20:"obstacle_Found.png"}
+			self.load_img = {n: "Images/sand.jpeg", n+1:"Images/silty.jpg",n+2:"Images/clay.jpg",n+3:"Images/rainwater.jpg",n+4:"Images/ice.jpg",n+5:"Images/snowwater.jpg",n+6:"Images/sedimetary.JPG",n+7:"Images/metamorphic.jpg",n+8:"Images/Igneous.jpeg", n+9:"Images/oxides.jpg", n+10:"Images/carbonates.jpg", n+11:"Images/phosphates.jpg",n+12:"Images/sulfides.jpg",n+13:"Images/native_element.jpg",n+14: "Images/silicates.jpg",n+20:"Images/Obstacle.jpg"}
 			#print self.data_value
 			############orginal function###################
 
@@ -134,8 +134,8 @@ class GUI_INIT:
 			# 	self.panel_num.place (x = 68 + (5 *x)  , y = 68 + (5*x))
 
 			###################### End Update With Loop #############################
-			print self.entered_data[2:]
-			print self.data_value
+			# print self.entered_data[2:]
+			# print self.data_value
 			if (str(self.data_value) ==self.entered_data[2]):
 
 				cordinate = self.SOI_list_enter[str(self.data_value)]
@@ -152,7 +152,8 @@ class GUI_INIT:
 				self.panel_num1 =tk.Label (self.top, image = self.value1)
 				self.panel_num1.pack()
 				self.panel_num1.place (x = 68 + (73*int(cordinate[0]))   , y = 68 + (73 * (6- (int(cordinate[2])))))    #removed X
-			
+				rospy.loginfo("Marker ID %s : %s", self.data_value, cordinate)
+
 			if (str(self.data_value) ==self.entered_data[4]):
 
 				cordinate = self.SOI_list_enter[str(self.data_value)]
@@ -168,6 +169,7 @@ class GUI_INIT:
 				self.panel_num2 =tk.Label (self.top, image = self.value2)
 				self.panel_num2.pack()				
 				self.panel_num2.place (x = 68 + (73*int(cordinate[0]))   , y = 68 + (73 * (6- (int(cordinate[2])))))
+				rospy.loginfo("Marker ID %s : %s", self.data_value, cordinate)
 			if (str(self.data_value) ==self.entered_data[6]):
 
 				cordinate = self.SOI_list_enter[str(self.data_value)]
@@ -184,7 +186,7 @@ class GUI_INIT:
 				self.panel_num3 =tk.Label (self.top, image = self.value3)
 				self.panel_num3.pack()
 				self.panel_num3.place (x = 68 + (73*int(cordinate[0]))   , y = 68 + (73 * (6- (int(cordinate[2])))))    #removed X
-			
+				rospy.loginfo("Marker ID %s : %s", self.data_value, cordinate)
 			if (str(self.data_value) ==self.entered_data[8]):
 
 				cordinate = self.SOI_list_enter[str(self.data_value)]
@@ -201,7 +203,7 @@ class GUI_INIT:
 				self.panel_num4 =tk.Label (self.top, image = self.value4)
 				self.panel_num4.pack()
 				self.panel_num4.place (x = 68 + (73*int(cordinate[0]))   , y = 68 + (73 * (6- (int(cordinate[2])))))    #removed X
-			
+				rospy.loginfo("Marker ID %s : %s", self.data_value, cordinate)			
 			if (str(self.data_value) ==self.entered_data[10]):
 
 				cordinate = self.SOI_list_enter[str(self.data_value)]
@@ -218,7 +220,7 @@ class GUI_INIT:
 				self.panel_num5 =tk.Label (self.top, image = self.value5)
 				self.panel_num5.pack()
 				self.panel_num5.place (x = 68 + (73*int(cordinate[0]))   , y = 68 + (73 * (6- (int(cordinate[2])))))    #removed X
-			
+				rospy.loginfo("Marker ID %s : %s", self.data_value, cordinate)
 			if (str(self.data_value) ==self.entered_data[12]):
 
 				cordinate = self.SOI_list_enter[str(self.data_value)]
@@ -235,7 +237,7 @@ class GUI_INIT:
 				self.panel_num6 =tk.Label (self.top, image = self.value6)
 				self.panel_num6.pack()
 				self.panel_num6.place (x = 68 + (73*int(cordinate[0]))   , y = 68 + (73 * (6- (int(cordinate[2])))))    #removed X
-			
+				rospy.loginfo("Marker ID %s : %s", self.data_value, cordinate)
 			if (str(self.data_value) ==self.entered_data[14]):
 
 				cordinate = self.SOI_list_enter[str(self.data_value)]
@@ -252,7 +254,7 @@ class GUI_INIT:
 				self.panel_num7 =tk.Label (self.top, image = self.value7)
 				self.panel_num7.pack()
 				self.panel_num7.place (x = 68 + (73*int(cordinate[0]))   , y = 68 + (73 * (6- (int(cordinate[2])))))    #removed X
-			
+				rospy.loginfo("Marker ID %s : %s", self.data_value, cordinate)
 			if (str(self.data_value) ==self.entered_data[16]):
 
 				cordinate = self.SOI_list_enter[str(self.data_value)]
@@ -269,13 +271,13 @@ class GUI_INIT:
 				self.panel_num8 =tk.Label (self.top, image = self.value8)
 				self.panel_num8.pack()
 				self.panel_num8.place (x = 68 + (73*int(cordinate[0]))   , y = 68 + (73 * (6- (int(cordinate[2])))))    #removed X
-			
+				rospy.loginfo("Marker ID %s : %s", self.data_value, cordinate)
 			self.top.update()			
 			self.top.resizable(0,0)
-			try:
-				rospy.loginfo("Marker ID %s : %s", self.data_value, self.SOI_list[self.data_value])
-			except KeyError:
-				rospy.loginfo("Marker ID %s : %s", self.data_value, "No record Found of this marker")
+			# try:
+			# 	rospy.loginfo("Marker ID %s : %s", self.data_value, self.SOI_list[self.data_value])
+			# except KeyError:
+			# 	rospy.loginfo("Marker ID %s : %s", self.data_value, "No record Found of this marker")
 		except:
 			pass
 		# self.top.mainloop()
