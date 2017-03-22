@@ -98,44 +98,7 @@ class GUI_INIT:
 			#self.panel =tk.Label (self.top, image = self.img)
 			#self.panel.pack(side = "bottom" ,fill ="both",expand = "yes")
 			self.load_img = {n: "Images/sand.jpeg", n+1:"Images/silty.jpg",n+2:"Images/clay.jpg",n+3:"Images/rainwater.jpg",n+4:"Images/ice.jpg",n+5:"Images/snowwater.jpg",n+6:"Images/sedimetary.JPG",n+7:"Images/metamorphic.jpg",n+8:"Images/Igneous.jpeg", n+9:"Images/oxides.jpg", n+10:"Images/carbonates.jpg", n+11:"Images/phosphates.jpg",n+12:"Images/sulfides.jpg",n+13:"Images/native_element.jpg",n+14: "Images/silicates.jpg",n+20:"Images/Obstacle.jpg"}
-			#print self.data_value
-			############orginal function###################
-
-			# self.previous_data_value.append(self.data_value)
-			# for x in range (0,len(self.previous_data_value)):
-			# 	print self.previous_data_value
-
-			# 	cordinate = self.SOI_list[self.previous_data_value[x]]
-			# 	self.load_image = "load_image" + str (self.previous_data_value[x])
-			# 	self.value ="value" + str (self.previous_data_value[x])
-			# 	self.panel_num = "panel_num" + str(self.previous_data_value[x])
-
-			# 	self.load_image = self.load_img[self.previous_data_value[x]]
-			# 	self.value = Image.open(self.load_image)
-			# 	self.value = self.value.resize((65,65), Image.ANTIALIAS)
-			# 	self.value = ImageTk.PhotoImage(self.value)
-			# 	self.panel_num =tk.Label (self.top, image = self.value)
-			# 	self.panel_num.pack()
-			# 	self.panel_num.place (x = (68 + 73 * int(cordinate[0]))   , y = (68 + 73 * int(cordinate[1])))
-
-			######################### original function end ####################33
-
-			########### Update With Loop #################3
 			
-			# for x in xrange(0,16):
-			# 	self.value ="img" + str (x)
-			# 	self.panel_num = "panel" +str (x)
-			# 	self.load_image = self.load_img[x]
-			# 	self.value = Image.open(self.load_image)
-			# 	self.value = self.value.resize((65,65), Image.ANTIALIAS)
-			# 	self.value = ImageTk.PhotoImage(self.value)
-			# 	self.panel_num =tk.Label (self.top, image = self.value)
-			# 	self.panel_num.pack()
-			# 	self.panel_num.place (x = 68 + (5 *x)  , y = 68 + (5*x))
-
-			###################### End Update With Loop #############################
-			# print self.entered_data[2:]
-			# print self.data_value
 			if (str(self.data_value) ==self.entered_data[2]):
 
 				cordinate = self.SOI_list_enter[str(self.data_value)]
@@ -284,8 +247,6 @@ class GUI_INIT:
 
 if __name__ == '__main__':
     gui_fun = GUI_INIT()
-    # gui_fun.gui_function()
-    # gui_fun.top.resizable(0,0)
     tk.mainloop()
     # gui_fun.top.resizable(0,0)
     rospy.spin()
