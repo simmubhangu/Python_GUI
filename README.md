@@ -22,8 +22,9 @@ In this GUI enter the detail according to inputs provided in the configuration
 
 
 After entering the input, GUI will appear as shown in Figure-2 
+
 <p align="center">
-  <img src="(https://github.com/simubhangu/Python_GUI/blob/master/Readme_images/b.png"> <br>
+  <img src="https://github.com/simubhangu/Python_GUI/blob/master/Readme_images/b.png"> <br>
   <b> Figure-2: Entering Input </b>
 </p>
 
@@ -51,7 +52,7 @@ When the camera detect the Marker correctly then corresponding image will pop up
 
 <p align="center">
   <img src="https://github.com/simubhangu/Python_GUI/blob/master/Readme_images/d.png"> <br>
-  <b> Figure-3: Final GUI after detecting all markers </b>
+  <b> Figure-4: Final GUI after detecting all markers </b>
 </p>
 
 
