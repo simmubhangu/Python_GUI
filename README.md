@@ -3,7 +3,8 @@ This package Contain the Python GUI for Explorer Bot Theme
 
 Package Required:
 Tkinter: sudo apt-get install python-tk	<br>
-Python Imaging Library(PIL): sudo apt-get install python-PIL
+Python Imaging Library(PIL): sudo apt-get install python-PIL <br>
+Image Tk: sudo apt-get install python-imaging-tk
 
 Follow the following instruction
 1. Clone the git repository into Laptop/PC and visit to that directory.
